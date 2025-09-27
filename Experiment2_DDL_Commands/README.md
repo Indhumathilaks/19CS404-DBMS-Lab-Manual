@@ -265,4 +265,9 @@ FOREIGN KEY(icom_id) REFERENCES company(com_id) on update cascade on delete casc
 
 
 ## RESULT
+
+<img width="1448" height="143" alt="image" src="https://github.com/user-attachments/assets/5f344b07-ea5a-42d1-842b-d468917cd3ea" />
+
+
+
 Thus, the SQL queries to implement different types of constraints and DDL commands have been executed successfully.
