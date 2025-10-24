@@ -47,135 +47,128 @@ SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
 
-<img width="1029" height="578" alt="image" src="https://github.com/user-attachments/assets/720040ba-63ff-4c37-8e4f-104fb2f062af" />
+<img width="1236" height="635" alt="image" src="https://github.com/user-attachments/assets/b9390629-2349-4377-820c-a8cebc932cb6" />
 
 
 ```sql
-SELECT InsuranceCompany, COUNT(DISTINCT PatientID) AS TotalPatients
-FROM Insurance
-GROUP BY InsuranceCompany;
+UPDATE Employees
+SET salary = salary * 2
+WHERE department_id = 20
+  AND job_id LIKE '%MAN';
+
 
 ```
 
 **Output:**
-<img width="1276" height="705" alt="image" src="https://github.com/user-attachments/assets/e51143a3-41e0-4d3e-a519-7f167cda8134" />
+<img width="1248" height="437" alt="image" src="https://github.com/user-attachments/assets/b00440b2-cf55-4d05-b03d-1d4d5a34141a" />
 
 
 **Question 2**
-<img width="1147" height="520" alt="image" src="https://github.com/user-attachments/assets/7523dc4f-cd87-4c9a-a86a-f8c8c1ed6397" />
+<img width="1070" height="343" alt="image" src="https://github.com/user-attachments/assets/de8de15b-672b-4062-9fa6-70d95dd3a2d6" />
 
 
 ```sql
-SELECT Frequency, COUNT(*) AS TotalPrescriptions
-FROM Prescriptions
-GROUP BY Frequency;
+UPDATE suppliers
+SET supplier_name = 'A1 Suppliers'
+WHERE supplier_id = 8;
+
 
 ```
 
 **Output:**
-<img width="1278" height="574" alt="image" src="https://github.com/user-attachments/assets/d4378f0c-4e2e-44ea-a829-6d9d296a1b89" />
+<img width="1231" height="479" alt="image" src="https://github.com/user-attachments/assets/65887dc2-b43d-4502-82af-70fc2cfa5ed0" />
 
 
 **Question 3**
 
-<img width="1116" height="449" alt="image" src="https://github.com/user-attachments/assets/14053995-28c9-4c3d-833e-e8a62d4d8a95" />
+<img width="1228" height="643" alt="image" src="https://github.com/user-attachments/assets/248183cc-c853-4b65-8b6e-2a6fbcca5bb8" />
 
 
 ```sql
-SELECT STRFTIME('%Y-%m', date) AS Month,
-       COUNT(*) AS TotalRecords
-FROM MedicalRecords
-GROUP BY Month
-ORDER BY Month;
+UPDATE Employees
+SET salary = 8000
+WHERE employee_id = 105
+  AND salary < 5000;
 
 ```
 
 **Output:**
-<img width="1276" height="485" alt="image" src="https://github.com/user-attachments/assets/40377843-8f5e-4912-bc5f-45b07d465f29" />
+<img width="1231" height="325" alt="image" src="https://github.com/user-attachments/assets/234ce54d-3766-481a-9529-fe336750a6cf" />
 
 
 **Question 4**
-<img width="1146" height="474" alt="image" src="https://github.com/user-attachments/assets/332c9eca-0e06-4125-94bf-0d00d8e5d33c" />
+<img width="1223" height="544" alt="image" src="https://github.com/user-attachments/assets/397a5a48-c55d-4696-a216-ac38e621c180" />
 
 
 ```sql
-SELECT MAX(purch_amt) AS MAXIMUM
-FROM orders;
+UPDATE products
+SET sell_price = sell_price * 1.15
+WHERE quantity < 50
+  AND supplier_id = 10;
+
 ```
 
 **Output:**
-
-<img width="1276" height="370" alt="image" src="https://github.com/user-attachments/assets/82193371-b5c5-4e8a-9d5c-3bfabda3adf2" />
-
+<img width="1229" height="583" alt="image" src="https://github.com/user-attachments/assets/23c2c4a0-9e89-492e-b983-5a4d00397b68" />
 
 **Question 5**
 
-<img width="979" height="429" alt="image" src="https://github.com/user-attachments/assets/35d89c4b-1cce-40ca-a765-d7652ea894d2" />
 
 
 ```sql
-SELECT name, email, LENGTH(email) AS min_email_length
-FROM customer
-WHERE LENGTH(email) = (
-    SELECT MIN(LENGTH(email)) FROM customer
-)
-LIMIT 1;
+UPDATE products
+SET reorder_lvl = reorder_lvl * 0.7
+WHERE product_name LIKE '%cream%'
+  AND quantity > reorder_lvl;
+
 ```
 
 **Output:**
-<img width="1280" height="375" alt="image" src="https://github.com/user-attachments/assets/8ca03c55-2ca1-4ea3-9806-13d48770de7d" />
+<img width="1234" height="580" alt="image" src="https://github.com/user-attachments/assets/aeae80aa-3736-48fe-b9ff-e035d3886606" />
 
 
 **Question 6**
 
-<img width="1132" height="448" alt="image" src="https://github.com/user-attachments/assets/bd8ff7be-b44f-4ab6-929f-b6e0f1ce29bc" />
+<img width="1230" height="655" alt="image" src="https://github.com/user-attachments/assets/813cf253-8255-4d56-8b97-ab519b2da4ad" />
 
 
 ```sql
-SELECT COUNT(DISTINCT age) AS COUNT
-FROM employee;
+DELETE FROM customer
+WHERE GRADE <> 3;
 ```
 
 **Output:**
-
-<img width="1271" height="371" alt="image" src="https://github.com/user-attachments/assets/54505496-2352-42f3-93dd-603daa7d038c" />
+<img width="1033" height="604" alt="image" src="https://github.com/user-attachments/assets/58fcb10d-60f0-4fb0-a869-bb459929dcf3" />
 
 
 **Question 7**
 
-<img width="1052" height="467" alt="image" src="https://github.com/user-attachments/assets/31f4c39b-fad3-4235-a1a8-52f691ab0307" />
-
+<img width="1240" height="638" alt="image" src="https://github.com/user-attachments/assets/25edc0dc-a3a8-4df2-a824-002b122e6397" />
 
 ```sql
-SELECT COUNT(DISTINCT customer_id) AS COUNT
-FROM customer
-WHERE grade IS NOT NULL;
+DELETE FROM customer
+WHERE CUST_NAME LIKE '%Holmes%';
+
 ```
 
 **Output:**
 
-<img width="1273" height="368" alt="image" src="https://github.com/user-attachments/assets/e6b37361-e8cd-4d13-834e-b0aeb46ed363" />
+<img width="1223" height="588" alt="image" src="https://github.com/user-attachments/assets/bd6c04bc-ac3b-4774-aa88-dff6ed47f0eb" />
 
 
 **Question 8**
-
-<img width="1242" height="476" alt="image" src="https://github.com/user-attachments/assets/f79cae50-7c36-4330-b165-0b1ad93bfe7e" />
-
+<img width="998" height="482" alt="image" src="https://github.com/user-attachments/assets/308e3479-588b-4384-955d-6e5090de4100" />
 
 ```sql
-SELECT occupation, AVG(workhour) 
-FROM employee1
-GROUP BY occupation
-HAVING AVG(workhour) BETWEEN 10 AND 12;
+DELETE FROM surgeries
+WHERE surgery_id = 3;
+
 ```
 
 **Output:**
 
-<img width="1278" height="432" alt="image" src="https://github.com/user-attachments/assets/5d91f32b-60dd-47c2-bc54-ef61b3051628" />
-
 
 **Question 9**
-<img width="1223" height="442" alt="image" src="https://github.com/user-attachments/assets/2f2ec904-ac66-4eae-acde-c1ab20fe2c77" />
 
 
 ```sql
