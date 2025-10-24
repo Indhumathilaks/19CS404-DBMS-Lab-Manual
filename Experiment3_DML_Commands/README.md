@@ -166,39 +166,38 @@ WHERE surgery_id = 3;
 ```
 
 **Output:**
+<img width="1232" height="461" alt="image" src="https://github.com/user-attachments/assets/bbc9f52e-341b-4d93-9355-38b952270311" />
 
 
 **Question 9**
+<img width="1249" height="504" alt="image" src="https://github.com/user-attachments/assets/8308f98f-2591-46e7-9039-ea391757dfda" />
 
 
 ```sql
-SELECT age, AVG(income)
-FROM employee
-GROUP BY age
-HAVING AVG(income) BETWEEN 300000 AND 500000;
+DELETE FROM customer
+WHERE (GRADE > 2 AND PAYMENT_AMT < (SELECT AVG(PAYMENT_AMT) FROM customer))
+   OR OUTSTANDING_AMT > 8000;
 ```
 
 **Output:**
 
-<img width="1270" height="390" alt="image" src="https://github.com/user-attachments/assets/0e990716-fca8-4ea3-81e6-1d003cfc94e7" />
+<img width="1223" height="750" alt="image" src="https://github.com/user-attachments/assets/8e7d6877-aa62-43e9-8b6e-88855b3dadfd" />
 
 
 **Question 10**
-<img width="1209" height="482" alt="image" src="https://github.com/user-attachments/assets/44b7cf50-5b10-4b28-abdf-1d782d039d86" />
+<img width="1095" height="473" alt="image" src="https://github.com/user-attachments/assets/6a237e20-5ac3-4825-b42d-4d99e4a730e8" />
 
 
 ```sql
-SELECT city, AVG(income)
-FROM employee
-GROUP BY city
-HAVING AVG(income) > 500000;
+DELETE FROM doctors
+WHERE doctor_id BETWEEN 2 AND 4;
 ```
 
 **Output:**
-<img width="1277" height="472" alt="image" src="https://github.com/user-attachments/assets/f3aadcd9-9134-4503-a8b5-98b04b82b9f2" />
+<img width="1235" height="908" alt="image" src="https://github.com/user-attachments/assets/3c88396f-4a2c-445e-8b87-d817d5b93014" />
 
 
 ## RESULT
-<img width="1451" height="274" alt="image" src="https://github.com/user-attachments/assets/82033c57-4e3a-4c8c-9f70-8e5b1465650a" />
+<img width="1432" height="304" alt="image" src="https://github.com/user-attachments/assets/fca6785d-4972-49c0-953b-10f85ab17674" />
 
 Thus, the SQL queries to implement DML commands have been executed successfully.
