@@ -37,125 +37,158 @@ HAVING condition;
 ```
 
 **Question 1**
---
--- Paste Question 1 here
+<img width="1029" height="578" alt="image" src="https://github.com/user-attachments/assets/9d9e6cf6-91a4-462c-87cb-fa1e9a223fcf" />
+
 
 ```sql
--- Paste your SQL code below for Question 1
+SELECT InsuranceCompany, COUNT(DISTINCT PatientID) AS TotalPatients
+FROM Insurance
+GROUP BY InsuranceCompany;
+
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="1276" height="705" alt="image" src="https://github.com/user-attachments/assets/36bc5d88-a901-4aa8-9e17-2f54103a763e" />
+
 
 **Question 2**
----
--- Paste Question 2 here
+<img width="1147" height="520" alt="image" src="https://github.com/user-attachments/assets/7774d3d6-75df-4578-b585-83e474114a6e" />
+
 
 ```sql
--- Paste your SQL code below for Question 2
+SELECT Frequency, COUNT(*) AS TotalPrescriptions
+FROM Prescriptions
+GROUP BY Frequency;
+
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="1278" height="574" alt="image" src="https://github.com/user-attachments/assets/a5228e71-c619-4a3a-a6bb-5ace8fff899b" />
 
 **Question 3**
----
--- Paste Question 3 here
+<img width="1116" height="449" alt="image" src="https://github.com/user-attachments/assets/668d1e14-840d-4c38-bd3d-6d73eea3ae76" />
+
 
 ```sql
--- Paste your SQL code below for Question 3
+SELECT STRFTIME('%Y-%m', date) AS Month,
+       COUNT(*) AS TotalRecords
+FROM MedicalRecords
+GROUP BY Month
+ORDER BY Month;
+
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="1276" height="485" alt="image" src="https://github.com/user-attachments/assets/2a66a18f-f396-47a7-a9b4-4313fd2d0362" />
+
 
 **Question 4**
----
--- Paste Question 4 here
+<img width="1146" height="474" alt="image" src="https://github.com/user-attachments/assets/749b7096-6ac9-46fc-af45-4e225f4dfe9c" />
 
 ```sql
--- Paste your SQL code below for Question 4
+SELECT MAX(purch_amt) AS MAXIMUM
+FROM orders;
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="1276" height="370" alt="image" src="https://github.com/user-attachments/assets/be6cb9db-5895-4d7c-8022-92e3e0c77835" />
+
 
 **Question 5**
----
--- Paste Question 5 here
+<img width="979" height="429" alt="image" src="https://github.com/user-attachments/assets/4eb858c2-dabb-42b5-b021-d63240b5dcfc" />
+
 
 ```sql
--- Paste your SQL code below for Question 5
+SELECT name, email, LENGTH(email) AS min_email_length
+FROM customer
+WHERE LENGTH(email) = (
+    SELECT MIN(LENGTH(email)) FROM customer
+)
+LIMIT 1;
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="1132" height="448" alt="image" src="https://github.com/user-attachments/assets/ae836104-16c7-411d-a5b9-8a351f05e91f" />
+
 
 **Question 6**
----
--- Paste Question 6 here
+<img width="1280" height="375" alt="image" src="https://github.com/user-attachments/assets/764484cb-4d48-4407-80ae-600baa1daa87" />
+
 
 ```sql
--- Paste your SQL code below for Question 6
+SELECT COUNT(DISTINCT age) AS COUNT
+FROM employee;
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="1271" height="371" alt="image" src="https://github.com/user-attachments/assets/d36eb60a-d246-4a25-9ddb-6fae46ffabce" />
+
 
 **Question 7**
----
--- Paste Question 7 here
+<img width="1052" height="467" alt="image" src="https://github.com/user-attachments/assets/5c6c8b75-1d6f-4b2f-b50a-f967fc9bd917" />
+
 
 ```sql
--- Paste your SQL code below for Question 7
+SELECT COUNT(DISTINCT customer_id) AS COUNT
+FROM customer
+WHERE grade IS NOT NULL;
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="1273" height="368" alt="image" src="https://github.com/user-attachments/assets/40bf8bc1-7409-4be4-b6a7-71a7ec7d136d" />
+
 
 **Question 8**
----
--- Paste Question 8 here
+<img width="1242" height="476" alt="image" src="https://github.com/user-attachments/assets/878daf14-394a-4841-be70-9707ab1e782f" />
+
 
 ```sql
--- Paste your SQL code below for Question 8
+SELECT occupation, AVG(workhour) 
+FROM employee1
+GROUP BY occupation
+HAVING AVG(workhour) BETWEEN 10 AND 12;
 ```
 
 **Output:**
-
-![Output8](output.png)
+<img width="1278" height="432" alt="image" src="https://github.com/user-attachments/assets/0e1babfb-a629-4bbb-adee-54cb612ffad0" />
 
 **Question 9**
----
--- Paste Question 9 here
+<img width="1223" height="442" alt="image" src="https://github.com/user-attachments/assets/ef9913e3-448c-40ec-a23e-a9679ea16d87" />
 
 ```sql
--- Paste your SQL code below for Question 9
+SELECT age, AVG(income)
+FROM employee
+GROUP BY age
+HAVING AVG(income) BETWEEN 300000 AND 500000;
 ```
 
 **Output:**
+<img width="1270" height="390" alt="image" src="https://github.com/user-attachments/assets/7e70dd63-5025-44a3-a88e-193032cf8edc" />
 
-![Output9](output.png)
 
 **Question 10**
----
--- Paste Question 10 here
+<img width="1209" height="482" alt="image" src="https://github.com/user-attachments/assets/93b0c9d6-18fe-4e2c-8214-43630c1ac070" />
 
 ```sql
--- Paste your SQL code below for Question 10
+SELECT city, AVG(income)
+FROM employee
+GROUP BY city
+HAVING AVG(income) > 500000;
 ```
 
 **Output:**
-
-![Output10](output.png)
+<img width="1277" height="472" alt="image" src="https://github.com/user-attachments/assets/3d87e69e-079d-4cd0-b637-a745377a65b7" />
 
 
 ## RESULT
+<img width="1451" height="274" alt="image" src="https://github.com/user-attachments/assets/68664edd-6f9a-4762-9f03-0a2da12f87c1" />
+
+
 Thus, the SQL queries to implement aggregate functions, GROUP BY, and HAVING clause have been executed successfully.
